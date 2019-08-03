@@ -78,6 +78,6 @@ class OutputPCF8574 {
 	  void Write();
 };
 
-void OutputTone(uint8_t pin, uint8_t value);
+//void OutputTone(uint8_t pin, uint8_t value);
 
 #endif

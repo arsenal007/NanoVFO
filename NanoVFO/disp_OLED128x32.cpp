@@ -1,7 +1,7 @@
-#include "disp_oled128x32.h"
+#include "disp_OLED128x32.h"
 // SSD1306Ascii library https://github.com/greiman/SSD1306Ascii
-#include "SSD1306AsciiAvrI2c.h"
-#include "fonts\lcdnums12x16mod.h"
+#include <SSD1306AsciiAvrI2c.h>
+#include "fonts/lcdnums12x16mod.h"
 
 #define I2C_ADDRESS 0x3C
 
@@ -51,12 +51,12 @@ void Display_OLED128x32::Draw(TRX& trx)
     last_freq = trx.Freq;
   }
 
-  if (trx.TX != last_tx) {
+  if (trx.tx() != last_tx) {
     oled32.setFont(Adafruit5x7);
     oled32.setCursor(7,3);
-    if (trx.TX) oled32.print("TX");
+    if (trx.tx()) oled32.print("TX");
     else oled32.print("RX");
-    last_tx = trx.TX;
+    last_tx = trx.tx();
   }
 
   if (trx.CW != last_cw) {
@@ -113,4 +113,3 @@ void Display_OLED128x32::clear()
   last_wpm=0;
   last_cw=0xFF;
 }
-

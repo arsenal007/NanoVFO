@@ -27,15 +27,15 @@
 #define SI5351_CLK2_DRIVE   0
 
 // Pin mapping and active levels
-#define PIN_OUT_CW    13
-#define OUT_CW_ACTIVE_LEVEL  HIGH
-#define PIN_OUT_PTT   12
-#define OUT_PTT_ACTIVE_LEVEL  HIGH
-#define PIN_OUT_KEY   11
-#define OUT_KEY_ACTIVE_LEVEL  HIGH
+//#define PIN_OUT_CW    13
+//#define OUT_CW_ACTIVE_LEVEL  HIGH
+//#define PIN_OUT_PTT   12
+//#define OUT_PTT_ACTIVE_LEVEL  HIGH
+//#define PIN_OUT_KEY   11
+//#define OUT_KEY_ACTIVE_LEVEL  HIGH
 
 #define PIN_IN_PTT          9
-#define PIN_OUT_TONE        10
+//#define PIN_OUT_TONE        10
 #define PIN_ANALOG_KEYPAD   A6
 #define PIN_CW_SPEED_POT    A7
 
@@ -56,7 +56,7 @@
 // количество импульсов на оборот примененного энкодера
 // 360-400 for optic encoders and 20 for mechanic
 //#define ENCODER_PULSE_PER_TURN    360
-#define ENCODER_PULSE_PER_TURN    20
+#define ENCODER_PULSE_PER_TURN    28
 // изменение частоты в Гц на один оборот в обычном режиме
 #define ENCODER_FREQ_LO_STEP      2000
 // изменение частоты в Гц на один оборот в ускоренном режиме

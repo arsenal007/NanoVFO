@@ -5,7 +5,7 @@
 #define USB 1
 
 // число диапазонов
-#define BAND_COUNT  3
+#define BAND_COUNT  1
 
 extern const struct _Bands {
   uint8_t   mc;
@@ -14,9 +14,7 @@ extern const struct _Bands {
 } Bands[];
 
 #define DEFINED_BANDS \
-  {80,   3500000L,  3600000L,  3800000L, LSB}, \
-  {40,   7000000L,  7045000L,  7200000L, LSB}, \
-  {20,  14000000L, 14100000L, 14350000L, USB}
+  {40,   7000000L,  7045000L,  7200000L, LSB}
 
 /* описание стандартных любительских диапазонов
  *  скопировать требуемые в DEFINED_BANDS

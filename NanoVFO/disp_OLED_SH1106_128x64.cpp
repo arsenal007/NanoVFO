@@ -1,7 +1,7 @@
-#include "disp_oled_sh1106_128x64.h"
+#include "disp_OLED_SH1106_128x64.h"
 // SSD1306Ascii library https://github.com/greiman/SSD1306Ascii
 #include "SSD1306AsciiAvrI2c.h"
-#include "fonts\lcdnums14x24mod.h"
+#include "lcdnums14x24mod.h"
 
 #define I2C_ADDRESS 0x3C
 
@@ -50,10 +50,10 @@ void Display_OLED_SH1106_128x64::Draw(TRX& trx)
     last_freq = trx.Freq;
   }
 
-  if (trx.BandIndex != last_BandIndex || trx.TX != last_tx || trx.CW != last_cw) {
+  if (trx.BandIndex != last_BandIndex || trx.tx() != last_tx || trx.CW != last_cw) {
     oled642.setFont(X11fixed7x14);
     oled642.setCursor(20,0);
-    if (trx.TX) oled642.print("TX");
+    if (trx.tx()) oled642.print("TX");
     else oled642.print("RX");
 
     int mc = Bands[trx.BandIndex].mc;
@@ -66,7 +66,7 @@ void Display_OLED_SH1106_128x64::Draw(TRX& trx)
     if (trx.CW) oled642.print("CW");
     else oled642.print("  ");
 
-    last_tx = trx.TX;
+    last_tx = trx.tx();
     last_cw = trx.CW;
     last_BandIndex = trx.BandIndex;
   }
@@ -109,4 +109,3 @@ void Display_OLED_SH1106_128x64::clear()
   last_wpm=0;
   last_cw=0xFF;
 }
-
